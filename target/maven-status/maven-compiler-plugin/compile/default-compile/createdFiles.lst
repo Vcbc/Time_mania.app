@@ -1,7 +1,9 @@
-controller\Time_controller.class
 tela\Tela_gerador$3.class
 tela\Tela_gerador$2.class
+controller\Jogo_controller.class
 tela\Tela_gerador$1.class
 tela\Tela_gerador$4.class
-util\ConnectionFactory.class
+tela\Tela_gerador$5.class
+model\Dados_jogo.class
 tela\Tela_gerador.class
+tela\Tela_gerador$6.class
