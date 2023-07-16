@@ -26,8 +26,7 @@ public class Tela_gerador extends javax.swing.JFrame {
         DateFormat formatador = DateFormat.getDateInstance(DateFormat.SHORT);
         data_jogo.setText((formatador.format(data)));
         dados.setDATA(data);
-        //Api_resultado resultado = new Api_resultado();
-        //resultado.request();
+
     }
     Connection conexao = null;
     Dados_jogo dados = new Dados_jogo();
@@ -246,6 +245,11 @@ public class Tela_gerador extends javax.swing.JFrame {
         resultado.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         resultado.setText("Resultados");
         resultado.setBorderPainted(false);
+        resultado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                resultadoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -481,7 +485,7 @@ public class Tela_gerador extends javax.swing.JFrame {
 
         try {
             HashMap filtro = new HashMap();
-            filtro.put("ID",Integer.parseInt(num_jogo.getText()));
+            filtro.put("ID", Integer.parseInt(num_jogo.getText()));
             JasperPrint print = JasperFillManager.fillReport("C:/Reports/DadosDoJogo.jasper", filtro, conexao);
 
             JasperViewer.viewReport(print, false);
@@ -492,6 +496,12 @@ public class Tela_gerador extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_imprimirJogoMouseClicked
+
+    private void resultadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultadoMouseClicked
+        Api_resultado resultado = new Api_resultado();
+        resultado.request();
+
+    }//GEN-LAST:event_resultadoMouseClicked
 
     /**
      * @param args the command line arguments
