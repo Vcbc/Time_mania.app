@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DadosDoJogo" pageWidth="288" pageHeight="1008" columnWidth="248" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="beb35010-b68b-4e41-b5c8-7d3d009a5a98">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from info_jogos where ID=$P{ID};]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TIME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATA" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM4" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM5" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM6" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM7" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM8" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM9" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUM10" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="-15" width="239" height="46" uuid="d1242077-3ebc-4ce9-9778-4e125de6d12b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="36"/>
+				</textElement>
+				<text><![CDATA[TIME MANIA]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="41" y="59" width="100" height="20" uuid="82752ccb-0687-4b42-8cd3-4ade4fd9655d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="59" width="28" height="20" uuid="9f960601-b990-4859-941f-a6d39e55257b"/>
+				<text><![CDATA[DATA :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="219" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="fe78a8b5-546c-4747-9202-ef02fede488e"/>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="1cfc1cc0-5cb0-422a-b450-55c5bd41d09a"/>
+				<text><![CDATA[NÚMERO DO JOGO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="41" height="20" uuid="c865d5ab-22c1-4ea1-ba20-90a8c1fd47eb"/>
+				<text><![CDATA[NOME:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="41" y="20" width="100" height="20" uuid="fc1b3519-46d6-4ec6-81f0-11d9438e5fa9"/>
+				<textFieldExpression><![CDATA[$F{NOME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="66" y="53" width="116" height="20" uuid="2179be7b-f8b7-45c4-b78c-6289915d2b16"/>
+				<text><![CDATA[NÚMEROS JOGADOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="52" y="84" width="25" height="20" uuid="6a40ecba-3b5e-4156-a311-bbd634000f33"/>
+				<textFieldExpression><![CDATA[$F{NUM2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="84" width="25" height="20" uuid="68f171e1-2ea6-4a93-be36-c257fbed015b"/>
+				<textFieldExpression><![CDATA[$F{NUM3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="165" y="84" width="25" height="20" uuid="c57fa2c2-81e7-4454-ad1c-2174359bc103"/>
+				<textFieldExpression><![CDATA[$F{NUM4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="84" width="25" height="20" uuid="c00d9cb7-786d-459c-b8f9-60d2cdbbb792"/>
+				<textFieldExpression><![CDATA[$F{NUM5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="120" width="26" height="20" uuid="b4d38943-2d4f-4307-ae4e-cbcdc98e485e"/>
+				<textFieldExpression><![CDATA[$F{NUM6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="120" width="25" height="20" uuid="44e29d55-22fe-410c-86aa-3a7203b0f512"/>
+				<textFieldExpression><![CDATA[$F{NUM7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="120" width="25" height="20" uuid="1546db0e-b657-46af-90e8-944b338dda10"/>
+				<textFieldExpression><![CDATA[$F{NUM8}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="165" y="120" width="25" height="20" uuid="97ebc3b5-ab7a-4fa2-91b1-b62bb4decf98"/>
+				<textFieldExpression><![CDATA[$F{NUM9}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="120" width="25" height="20" uuid="2d90b613-b7d0-4f84-bfc6-6c51d5bbe6a5"/>
+				<textFieldExpression><![CDATA[$F{NUM10}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="164" width="100" height="20" uuid="d13b8a72-4232-4e92-9433-0c70e827c970"/>
+				<textFieldExpression><![CDATA[$F{TIME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="164" width="115" height="20" uuid="a2c191dd-13fd-46d2-aaf3-583f38f6c94d"/>
+				<text><![CDATA[TIME DO CORAÇÃO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="4" y="84" width="25" height="20" uuid="dbecba03-de21-4e3c-884b-35be9a645c03"/>
+				<textFieldExpression><![CDATA[$F{NUM1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="2" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -7,12 +7,16 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import model.Resultado;
+import org.json.JSONObject;
 
 public class Api_resultado  {
 
     public String request() {
-        String url = "https://apiloterias.com.br/app/resultado?loteria=timemania&token=AAB1k4dlp9YHD51";
+        String url = "https://loteriascaixa-api.herokuapp.com/api/timemania/latest";
 
         try {
 
@@ -22,11 +26,32 @@ public class Api_resultado  {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             String body = response.body();
             System.out.println(body);
-
+           
+            
+            // NO LAÇO FOR ESTOU TRANSFORMANDO A DEZENA DE OBJECT PARA STRING E PEDINDO QUAL O TIPO DA DEZENA
+            // MAS PRECISO SETAR A DEZENA COMO INTEGER NO ATRIBUTO DEZENA DA CLASSE RESULTADO
+            
+           JSONObject objeto = new JSONObject(body);
+           
+           
+            System.out.println(objeto.get("timeCoracao"));
+            System.out.println(objeto.get("dezenas"));
+            
+            List <Object> dezenas = new ArrayList<>();
+            
+            for (Object dezena : objeto.getJSONArray("dezenas")) {
+                dezenas.add(Integer.valueOf((String)dezena));
+                
+                System.out.println(dezenas);
+                System.out.println(dezena.getClass());
+                
+            }
             Resultado resultado = new Resultado();
-            ObjectMapper mapper = new ObjectMapper();
-            String atributos = mapper.readValue(body, resultado.class);
-            System.out.println(atributos);
+            
+           System.out.println(resultado.getDezena1());
+           
+           
+          
             return body;
 
         } catch (IOException | InterruptedException ex) {
